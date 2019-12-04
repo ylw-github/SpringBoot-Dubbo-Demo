@@ -1,0 +1,11 @@
+server:
+  port: 8082
+
+sspring:
+  dubbo:
+    application:
+      name: consumer-demo
+    registry:
+      address: zookeeper://192.168.162.131
+      port: 2181
+    scan: com.ylw.dubbo.consumer.controller
