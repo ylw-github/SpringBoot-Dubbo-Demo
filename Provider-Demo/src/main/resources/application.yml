@@ -1,14 +1,22 @@
 server:
   port: 8081
 
-spring:
-  dubbo:
-    application:
-      name: provider-demo #应用名
-    registry:
-      address: zookeeper://192.168.162.131 #zookeeper地址
-      port: 2181 #提供注册的端口
-    protocol:
-      name: dubbo
-      port: 20890 #dubbo服务暴露的端口
-    scan: com.ylw.dubbo.provider.service #扫描的包名
+application:
+  #版本号
+  version: 1.0.0
+
+dubbo:
+  application:
+    #应用名称，每个dubbo应用的名称都是唯一的
+    name: producer-demo
+  registry:
+    #注册中心
+    address: zookeeper://192.168.162.131:2181
+  protocol:
+    #协议名称
+    name: dubbo
+    #服务暴露端口
+    port: 20880
+  scan:
+    #扫描服务注册bean,即service实现类所在的包
+    basePackages: com.ylw.dubbo.service.impl

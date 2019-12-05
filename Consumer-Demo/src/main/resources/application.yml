@@ -1,11 +1,14 @@
 server:
   port: 8082
 
-sspring:
-  dubbo:
-    application:
-      name: consumer-demo
-    registry:
-      address: zookeeper://192.168.162.131
-      port: 2181
-    scan: com.ylw.dubbo.consumer.controller
+application:
+  #版本号
+  version: 1.0.0
+
+dubbo:
+  application:
+    #应用名称，每个dubbo应用的名称都是唯一的
+    name: consumer-demo
+  registry:
+    #注册中心
+    address: zookeeper://192.168.162.131:2181
